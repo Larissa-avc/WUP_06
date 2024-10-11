@@ -98,4 +98,3 @@ With the data shown the null hypothesis is rejected due to the P value being 0.0
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
 In conclusion the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05. The helper files used is cat~cat since they are both categorical. Therefore there is a difference in attitude towards capital punishment dependent of race.
-
