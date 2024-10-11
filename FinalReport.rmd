@@ -1,6 +1,6 @@
 ---
 title: "GSS challange More Data"
-author: "Put your name here!"
+author: "Larissa vera!"
 date: "put the date here"
 output: html_document
 ---
@@ -30,9 +30,15 @@ mydata <- na.omit(mydata)
 Is attitude toward capitol punishment (cappun) independent of race (race)?
 If not, then whose view differs from whom??
 
+Data comes from GSS university of chicago, 2016 survey.
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+$H_0$: There is no difference in attitude towards capital punishment independent of race.
+
+$H_A$: There is a difference in attitude towards capital punishment independent of race.
 
 # Results
 
@@ -44,7 +50,13 @@ If not, then whose view differs from whom??
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+```{r}
+barchartGC(~race + cappun,data=mydata)
+barchartGC(~race + cappun,data=mydata, type="percent")
 
+```
+
+The boxplot shows that white and other people are more likely to favor cuppun while black people are more likely to oppose cappun.
 
 ## Now with The Most data (fewer variables gives more data points)
 
@@ -54,8 +66,13 @@ If not, then whose view differs from whom??
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~race + cappun, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
-
+the data shows that 65.10% of people are in favor of captial punishment. 42.62% of black people are in favor of capital punishment. 55.20% of other people are in favor of capital punishment. This shows that white people are in higher favor of capital punishment.
 
 ## Now with More data
 
@@ -65,8 +82,13 @@ If not, then whose view differs from whom??
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
-`
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
+With the data shown the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05 showing that 1300 white people favor capital punishment. 
 
 ## More data version
 
@@ -74,3 +96,6 @@ If not, then whose view differs from whom??
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+In conclusion the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05. The helper files used is cat~cat since they are both categorical. Therefore there is a difference in attitude towards capital punishment dependent of race.
+
