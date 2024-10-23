@@ -88,7 +88,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-With the data shown the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05 showing that 1300 white people favor capital punishment. 
+With the data shown the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05 showing that 1300 white people favor capital punishment. Showing cappun relationship with race is related.
 
 ## More data version
 
@@ -97,4 +97,4 @@ With the data shown the null hypothesis is rejected due to the P value being 0.0
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-In conclusion the null hypothesis is rejected due to the P value being 0.00000000000000022 which is less than 0.05. The helper files used is cat~cat since they are both categorical. Therefore there is a difference in attitude towards capital punishment dependent of race.
+In conclusion the null hypothesis is rejected due to the P value in the fisher exact test being 0.00000000000000022 which is less than 0.05. The helper files used is cat~cat since they are both categorical. Therefore there is a difference in attitude towards capital punishment dependent of race.
